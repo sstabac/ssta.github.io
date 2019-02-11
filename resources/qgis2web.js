@@ -30,7 +30,16 @@ var map = new ol.Map({
 });
 
 
-map.getView().fit([-8369513.619760, 404112.802332, -8344675.859318, 418697.958597], map.getSize());
+    var searchLayer = new ol.SearchLayer({
+      layer: lyr_sur_1,
+      colName: 'd_asignaci',
+      zoom: 10,
+      collapsed: true,
+      map: map
+    });
+
+    map.addControl(searchLayer);
+map.getView().fit([-8467607.890693, 350451.994985, -8268905.807157, 467133.245104], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1

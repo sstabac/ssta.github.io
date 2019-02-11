@@ -3,9 +3,12 @@ var baseLayer = new ol.layer.Group({
     'title': '',
     layers: [
 new ol.layer.Tile({
-    'title': 'OSM',
+    'title': 'OSM B&W',
     'type': 'base',
-    source: new ol.source.OSM()
+    source: new ol.source.XYZ({
+        url: 'http://{a-c}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png',
+        attributions: [new ol.Attribution({html: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})]
+    })
 })
 ]
 });
@@ -30,7 +33,7 @@ jsonSource_sur_1.addFeatures(features_sur_1);var lyr_sur_1 = new ol.layer.Vector
                 declutter: true,
                 source:jsonSource_sur_1,
 minResolution:0.140022330761,
- maxResolution:560.089323045,
+ maxResolution:1400.22330761,
 
                 style: style_sur_1,
     title: 'sur<br />\
